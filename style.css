@@ -1,0 +1,209 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f4f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    background-color: #ffffff;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    padding: 2.5rem;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden {
+    display: none;
+}
+
+#start-screen {
+    text-align: center;
+}
+
+#start-screen h1 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 1rem;
+}
+
+#start-screen p {
+    font-size: 1.125rem;
+    color: #4b5563;
+    margin-bottom: 1.5rem;
+}
+
+#quiz-screen {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.quiz-header {
+    width: 100%;
+    align-items: center;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.quiz-header div {
+    font-size: 20px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #374151;
+}
+
+#question-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+#options-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    justify-items: center;
+    width: 100%;
+}
+
+.option-button {
+    background-color: #e2e8f0;
+    color: #334155;
+    padding: 1rem 1.5rem;
+    border-radius: 0.75rem;
+    margin-bottom: 0.75rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    font-weight: 500;
+    text-align: left;
+    border: 2px solid transparent;
+    width: 100%;
+}
+
+.option-button:hover:not(.correct):not(.incorrect) {
+    background-color: #cbd5e1;
+    transform: translateY(-2px);
+}
+
+.option-button.selected {
+    border-color: #3b82f6;
+    background-color: #bfdbfe;
+}
+
+.option-button.correct {
+    background-color: #d1fae5;
+    border-color: #10b981;
+    color: #065f46;
+    font-weight: 600;
+}
+
+.option-button.incorrect {
+    background-color: #fee2e2;
+    border-color: #ef4444;
+    color: #991b1b;
+    font-weight: 600;
+}
+
+.progress-bar-container {
+    width: 100%;
+    background-color: #e2e8f0;
+    border-radius: 9999px;
+    height: 10px;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background-color: #3b82f6;
+    width: 0%;
+    border-radius: 9999px;
+    transition: width 0.3s ease-in-out;
+}
+
+.btn-primary {
+    background-color: #3b82f6;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+    margin-top: 1rem;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #2563eb;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: #64748b;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 4px 10px rgba(100, 116, 139, 0.3);
+    margin-top: 1.5rem;
+    border: none;
+}
+
+.btn-secondary:hover {
+    background-color: #475569;
+    transform: translateY(-2px);
+}
+
+#results-screen {
+    text-align: center;
+}
+
+#results-screen h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 1rem;
+}
+
+#results-screen p {
+    font-size: 1.5rem;
+    color: #374151;
+    margin-bottom: 0.75rem;
+}
+
+#results-screen p:last-of-type {
+    font-size: 1.25rem;
+    color: #4b5563;
+    margin-bottom: 1.5rem;
+}
+
+.pointer-events-none {
+    pointer-events: none;
+}
