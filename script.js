@@ -74,15 +74,24 @@ let score = 0;
 let timeLeft = 30;
 let timerInterval;
 let selectedOption = null;
-let highScore = 0; 
+let highScore = 0;
+let quizActive = false;
 
 const initQuiz = () => {
     quizScreen.classList.add('hidden');
     resultScreen.classList.add('hidden');
     console.log("Quiz initialized");
+    quizActive = false;
 }
 
 window.onload = initQuiz;
+
+document.addEventListener('visibilitychange', () => {
+    if(document.visibilityState == 'hidden' && quizActive){
+        endQuiz();
+        resetButton.classList.add("hidden");
+    }
+});
 
 const startQuiz = () => {
     startScreen.classList.add('hidden');
@@ -94,6 +103,7 @@ const startQuiz = () => {
     timeLeft = 30; // reset timer
     scoreElement.textContent = score;
     nextQuestionBtn.classList.add('hidden');
+    quizActive = true;
     startTimer();
     showQuestion();
     updateProgressBar();
